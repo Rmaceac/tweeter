@@ -1,0 +1,34 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#tweet-text {
+  border-width: 0 0 2px;
+  margin-bottom: 10px;
+  background-color: #f4f1ec;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  resize: none;
+}
+
+.input-area{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.spread-opposite {
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee;
+}
+
+button {
+  background-color: #4056A1;
+  color: aliceblue;
+  
+}
+
