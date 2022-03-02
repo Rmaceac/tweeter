@@ -1,10 +1,15 @@
 article {
+  width: 80%;
   margin-top: 50px;
   border: solid;
   padding-top: 30px;
   padding-bottom: 15px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+article:hover {
+  box-shadow: 3px 5px #c0c0c0;
 }
 
 .tweet {
@@ -48,4 +53,10 @@ figure {
 .social-icons {
   font-size: medium;
   margin: -14px;
+}
+
+.fa-flag:hover,
+.fa-retweet:hover,
+.fa-heart:hover {
+  color: goldenrod;
 }

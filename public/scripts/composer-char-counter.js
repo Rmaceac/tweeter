@@ -1,5 +1,4 @@
 $(document).ready( () => {
-  console.log("Document Ready!")
 
   const $textArea = $("#tweet-text");
   
@@ -15,5 +14,4 @@ $(document).ready( () => {
      }
     })
 
-  
 })
