@@ -2,11 +2,12 @@ $(document).ready( () => {
   console.log("Document Ready!")
 
   const $textArea = $("#tweet-text");
-  const $counter = $(".counter");
   
   $textArea.on("input", function() {
     const textLength = $(this).val().length;
-    textLength <= 140 ? console.log(140 - textLength) : console.log(-textLength + 140);
+    const $counter = $(this).siblings().children().last();
+    console.log($counter);
+    textLength <= 140 ? $counter[0].innerHTML = 140 - textLength : $counter[0].innerHTML = -textLength + 140;
   })
 
   
