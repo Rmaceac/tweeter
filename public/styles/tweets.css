@@ -1,12 +1,29 @@
-.tweet {
+article {
   margin-top: 50px;
   border: solid;
   padding-top: 30px;
   padding-bottom: 15px;
   padding-left: 20px;
   padding-right: 20px;
-} 
+}
+
+.tweet {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -16px;
+  margin-bottom: 43px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-around;
+  width: 260px;
+}
  
+.handle {
+  color: grey;
+}
+
 p {
   border-bottom-style: solid;
     border-bottom-width: 2px;
@@ -22,8 +39,13 @@ footer {
   margin-top: -22px;
 }
 
-.social-icons {
+figure {
+  width: 100px;
   display: flex;
+  justify-content: space-evenly;
+}
+
+.social-icons {
   font-size: medium;
   margin: -14px;
 }
