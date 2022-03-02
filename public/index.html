@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/body.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -46,7 +47,7 @@
       </div>      
     </nav>
 
-    <header>
+    <header id="profile-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -68,6 +69,25 @@
           </div>
         </form>
       </section>
+      
+      <article class="tweet">
+        <header>face/name + @handle</header>
+        <p>This is where the tweet goes. It should ideally
+          wrap itself in a pleasant way so that it doesn't trail infinitely
+          off of the screen.
+        </p>
+        <footer>
+          <small>10 days ago</small>
+          <section class="social-icons">
+            <figure><i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i></figure>
+                    
+            <!-- <figure><i class="fa-solid fa-retweet"></i></figure>
+            <figure><i class="fa-solid fa-heart"></i></figure> -->
+          </section>
+        </footer>
+      </article>
     </main>
     <!-- Character Counter -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>    
