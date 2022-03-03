@@ -11,13 +11,21 @@ nav {
   top: 0;
 }
 
-nav>span {
+nav > span {
   font-family: 'Bungee';
 }
 
-nav>div {
+nav > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: -24px;
+}
+
+.fa-angles-down:hover {
+  color: red;
+}
+
+#toggle-form {
+  cursor: pointer;
 }

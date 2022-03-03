@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 #tweet-text {
@@ -31,7 +31,7 @@
 button {
   background-color: #4056A1;
   color: aliceblue;
-  
+  cursor: pointer;  
 }
 
 .red {
