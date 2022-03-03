@@ -7,11 +7,13 @@ $(document).ready(function() {
 
   $(".input-area").submit(function(event) {
     event.preventDefault();
-    // const userInput = event.target[0].value;
+    const inputValue = this.text.value
+    if (inputValue === null || inputValue.length > 140) {
+      console.log("That don't work!");
+      return;
+    }
     const serializedForm = $(this).serialize();
-    console.log("SerializedForm:", serializedForm);
     $.post("/tweets", serializedForm, (response) => {
-      console.log("serializedForm", serializedForm);
       console.log("Success", response);
       
     })
