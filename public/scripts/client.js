@@ -5,6 +5,18 @@
 */
 $(document).ready(function() {
 
+  $(".input-area").submit(function(event) {
+    event.preventDefault();
+    // const userInput = event.target[0].value;
+    const serializedForm = $(this).serialize();
+    console.log("SerializedForm:", serializedForm);
+    $.post("/tweets/", serializedForm, (response) => {
+      console.log("serializedForm", serializedForm);
+      console.log("Success", response);
+      
+    })
+  });
+
   // DRIVER CODE
 
   const data = [
@@ -71,7 +83,6 @@ $(document).ready(function() {
 
   renderTweets(data);
 
-  // const $tweet = createTweetElement(data);
-  // console.log("🚀 ~ file: client.js ~ line 51 ~ $tweet", $tweet);
+  
 
 });
