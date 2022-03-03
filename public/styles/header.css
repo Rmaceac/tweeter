@@ -16,8 +16,14 @@
 #profile-header div {
   display: flex;
   justify-content: center;
+  margin: 10px 0 -5px;
 }
 
 h2 {
   color: white
+}
+
+@media (min-width: 1024px) {
+  #profile-header {
+    margin: 0 30px;  }
 }
