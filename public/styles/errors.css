@@ -7,3 +7,7 @@
   padding: 10px;
   margin-bottom: 21px;
 }
+
+.hidden {
+  visibility: hidden;
+}
