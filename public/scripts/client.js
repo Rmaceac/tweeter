@@ -7,12 +7,12 @@ $(document).ready(function() {
 
   $(".input-area").submit(function(event) {
     event.preventDefault();
-    const inputValue = this.text.value;
+    let inputValue = this.text.value;
+    
     if (inputValue === "") {
       alert("You cannot submit an empty tweet!");
       return;
-    }
-    if (inputValue.length > 140) {
+    } else if (inputValue.length > 140) {
       alert("Your tweet has too many characters!");
       return;
     }
@@ -20,6 +20,7 @@ $(document).ready(function() {
     const serializedForm = $(this).serialize();
     $.post("/tweets", serializedForm, (response) => {
       console.log("Success", response);
+      $("#tweet-text").val('');
       loadTweets();
     });
 
@@ -31,11 +32,6 @@ $(document).ready(function() {
       return renderTweets(response);
     });
   };
-  
-  // $.ajax("/tweets", { method: 'GET' })
-  // .then(function (morePostsHtml) {
-  // console.log('Success: ', morePostsHtml);
-  //   $button.replaceWith(morePostsHtml);
     
   loadTweets();
 
