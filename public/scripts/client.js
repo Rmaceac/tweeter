@@ -7,31 +7,38 @@ $(document).ready(function() {
 
   $(".input-area").submit(function(event) {
     event.preventDefault();
-    const inputValue = this.text.value
-    if (inputValue === null || inputValue.length > 140) {
-      console.log("That don't work!");
+    const inputValue = this.text.value;
+    if (inputValue === "") {
+      alert("You cannot submit an empty tweet!");
       return;
     }
+    if (inputValue.length > 140) {
+      alert("Your tweet has too many characters!");
+      return;
+    }
+
     const serializedForm = $(this).serialize();
     $.post("/tweets", serializedForm, (response) => {
       console.log("Success", response);
-      
-    })
-  });
+      loadTweets();
+    });
 
+  });
+  
   const loadTweets = function() {
     $.get("tweets",  { method: "GET" }, (response) => {
-      console.log("Success!")
+      console.log("Tweet posted");
       return renderTweets(response);
-    })
-  }
+    });
+  };
   
   // $.ajax("/tweets", { method: 'GET' })
   // .then(function (morePostsHtml) {
-  //   console.log('Success: ', morePostsHtml);
+  // console.log('Success: ', morePostsHtml);
   //   $button.replaceWith(morePostsHtml);
+    
   loadTweets();
-  
+
   // DRIVER CODE
 
   // const data = [
@@ -91,7 +98,7 @@ $(document).ready(function() {
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
       const newTweet = createTweetElement(tweet);
-      $("#tweets-container").append(newTweet);
+      $("#tweets-container").prepend(newTweet);
     }
 
   };
