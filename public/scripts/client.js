@@ -3,23 +3,31 @@
 * jQuery is already loaded
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
+
 $(document).ready(function() {
+  
+  $(".error").hide();
 
   $(".input-area").submit(function(event) {
     event.preventDefault();
     let inputValue = this.text.value;
     
     if (inputValue === "") {
-      alert("You cannot submit an empty tweet!");
+      $("#error-msg").text("You cannot submit an empty tweet!");
+      $(".error").show(300);
       return;
     } else if (inputValue.length > 140) {
-      alert("Your tweet has too many characters!");
+      $("#error-msg").text("Your tweet has too many characters!");
+      $(".error").show(300);
       return;
     }
 
+    $(".error").hide(300);
+    
+    
     const serializedForm = $(this).serialize();
     $.post("/tweets", serializedForm, (response) => {
-      console.log("Success", response);
+      console.log("Successful post", response);
       $("#tweet-text").val('');
       loadTweets();
     });
@@ -62,7 +70,16 @@ $(document).ready(function() {
   //   }
   // ];
 
+  // for escaping problematic user input
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (tweet) => {
+
+    const safeHTML = `<p>${escape(tweet.content.text)}</p>`;
 
     const tweetElement = `<article>
     <header class="tweet">
@@ -73,7 +90,7 @@ $(document).ready(function() {
       <i class="handle">${tweet.user.handle}</i>
     </header>
 
-    <p>"${tweet.content.text}"</p>
+    ${safeHTML}
 
     <footer>
       <small>${timeago.format(tweet.created_at)}</small>

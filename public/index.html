@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/styles/body.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/errors.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -62,7 +63,11 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <div class="error">
+          <i class="fa-solid fa-circle-radiation"></i>
+          <i id="error-msg">Placeholder error msg</i>
+          <i class="fa-solid fa-circle-radiation"></i>
+        </div>
         <form class="input-area" action="/tweets/" method="POST">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
