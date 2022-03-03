@@ -8,3 +8,16 @@
   background-color: #FFAC26;
   background-image: url("../images/argyle.png");
 }
+
+#profile-pic {
+  width: 50%
+}
+
+#profile-header div {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  color: white
+}

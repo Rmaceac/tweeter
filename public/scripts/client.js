@@ -84,8 +84,8 @@ $(document).ready(function() {
     const tweetElement = `<article>
     <header class="tweet">
       <div class="name">
-        <img src="${tweet.user.avatars}"/>
-        <strong>"${tweet.user.name}"</strong>
+        <img src=${tweet.user.avatars}/>
+        <strong>${tweet.user.name}</strong>
       </div>
       <i class="handle">${tweet.user.handle}</i>
     </header>
