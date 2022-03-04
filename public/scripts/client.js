@@ -8,13 +8,13 @@ $(document).ready(function() {
   
   $(".error").hide();
 
-  const $backToTopBtn = $("#to-top-btn");
-
   // click hides/shows new tweet form
   $("#toggle-form").click(function() {
     $(".new-tweet").toggle(300);
   });
-
+  
+  // Back to Top button scrolls to top of the page
+  const $backToTopBtn = $("#to-top-btn");
   $("#to-top-btn").click(function(event) {
     event.preventDefault();
     $("html, body").animate({scrollTop:0}, 300);
@@ -36,10 +36,8 @@ $(document).ready(function() {
 
     $(".error").hide(300);
     
-    
     const serializedForm = $(this).serialize();
     $.post("/tweets", serializedForm, (response) => {
-      console.log("Successful post", response);
       $("#tweet-text").val('');
       $("#tweets-container").empty();
       $(".counter").text(140);
@@ -50,7 +48,6 @@ $(document).ready(function() {
   
   const loadTweets = function() {
     $.get("tweets",  { method: "GET" }, (response) => {
-      console.log("Tweet posted");
       return renderTweets(response);
     });
   };
@@ -69,6 +66,7 @@ $(document).ready(function() {
     // variable containing user input, escaping harmful syntax.
     const safeHTML = `<p>${escape(tweet.content.text)}</p>`;
 
+    // HTML structure for a new tweet
     const tweetElement = `<article>
     <header class="tweet">
       <div class="name">

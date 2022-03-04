@@ -1,4 +1,6 @@
 .error {
+  display: flex;
+  justify-content: center;
   border-width: 5px;
   border-style: solid;
   border-color: red;

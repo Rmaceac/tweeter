@@ -25,6 +25,7 @@ main {
   animation: gelatine 0.5s infinite;
 }
 
+/* gelatine animation */
 @keyframes gelatine {
   from, to { transform: scale(1, 1); }
   25% { transform: scale(0.9, 1.1); }
