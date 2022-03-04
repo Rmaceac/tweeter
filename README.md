@@ -22,7 +22,9 @@ Features:
 
 ## Getting Started
 
-
+1. Use "npm install" to install all dependencies.
+2. Use "npm run local" to start the server.
+3. Navigate to localhost:8080 to view the site!
 
 ## Dependencies
 
