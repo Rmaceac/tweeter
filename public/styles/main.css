@@ -3,7 +3,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 .main-footer {
@@ -14,6 +14,8 @@ main {
 
 #to-top-btn {
   position: fixed;
+  bottom: 0px;
+  right: 0px;
   font-size: 40px;
   color: #4056A1;
 }
@@ -33,7 +35,7 @@ main {
 
 @media (min-width: 1024px) {
   main {
-    margin: 120px 0 0 -20px;
+    
   }
 }
 

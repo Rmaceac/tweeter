@@ -10,13 +10,14 @@ $(document).ready(function() {
 
   const $backToTopBtn = $("#to-top-btn");
 
-  $(window).scroll(() => {
-    if ($(window).scrollTop() > 300) {
-      $backToTopBtn.removeClass("hide");
-    } else {
-      $backToTopBtn.addClass("hide");
-    }
-  })
+  // $(window).scroll(() => {
+  //   if ($(window).scrollTop() > 300) {
+  //     $backToTopBtn.removeClass("hide");
+  //     console.log()
+  //   } else {
+  //     $backToTopBtn.addClass("hide");
+  //   }
+  // });
 
   $("#toggle-form").click(function() {
     // console.log("Ya clicked it bud!");
@@ -44,6 +45,8 @@ $(document).ready(function() {
     $.post("/tweets", serializedForm, (response) => {
       console.log("Successful post", response);
       $("#tweet-text").val('');
+      $("#tweets-container").empty();
+      $(".counter").text(140);
       loadTweets();
     });
 
