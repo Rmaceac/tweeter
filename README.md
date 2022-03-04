@@ -13,6 +13,13 @@ Features:
 - Error messages for empty or overfull inputs.
 - An animated "back-to-the-top" button in the bottom-right hand corner of the screen.
 
+## Screenshots
+
+!["Screenshot of the main page formatted for a large display."](https://github.com/Rmaceac/tweeter/blob/master/docs/main-page.png?raw=true)
+!["Screenshot of the main page formatted for a mobile device."](https://github.com/Rmaceac/tweeter/blob/master/docs/main-page-mobile.png?raw=true)
+!["Screenshot of an error being displayed above the text input area. A red, negative character counter shows the user has gone over the character limit."](https://github.com/Rmaceac/tweeter/blob/master/docs/too-many-chars.PNG?raw=true)
+
+
 ## Getting Started
 
 
