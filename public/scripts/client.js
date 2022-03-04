@@ -8,6 +8,16 @@ $(document).ready(function() {
   
   $(".error").hide();
 
+  const $backToTopBtn = $("#to-top-btn");
+
+  $(window).scroll(() => {
+    if ($(window).scrollTop() > 300) {
+      $backToTopBtn.removeClass("hide");
+    } else {
+      $backToTopBtn.addClass("hide");
+    }
+  })
+
   $("#toggle-form").click(function() {
     // console.log("Ya clicked it bud!");
     $(".new-tweet").toggle(300);
@@ -71,7 +81,7 @@ $(document).ready(function() {
 
     ${safeHTML}
 
-    <footer>
+    <footer class="tweet-options">
       <small>${timeago.format(tweet.created_at)}</small>
       <div class="social-icons">
         <figure>
