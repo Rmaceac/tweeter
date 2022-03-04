@@ -10,18 +10,14 @@ $(document).ready(function() {
 
   const $backToTopBtn = $("#to-top-btn");
 
-  // $(window).scroll(() => {
-  //   if ($(window).scrollTop() > 300) {
-  //     $backToTopBtn.removeClass("hide");
-  //     console.log()
-  //   } else {
-  //     $backToTopBtn.addClass("hide");
-  //   }
-  // });
-
+  // click hides/shows new tweet form
   $("#toggle-form").click(function() {
-    // console.log("Ya clicked it bud!");
     $(".new-tweet").toggle(300);
+  });
+
+  $("#to-top-btn").click(function(event) {
+    event.preventDefault();
+    $("html, body").animate({scrollTop:0}, 300);
   });
 
   $(".input-area").submit(function(event) {
